@@ -26,7 +26,15 @@ var regions = ['Kent Ridge', 'Buona Vista', 'Bugis', 'Marina Bay', 'Orchard',
 function initRouter(app) {
     console.log("connecting to the database: " + process.env.DATABASE_URL);
 
-	/* GET */
+    // web server starts up on Heroku only listen on the port number
+    // specified by PORT
+    let port = process.env.PORT;
+    if (port == null || port == "") {
+      port = 8000;
+    }
+    app.listen(port);
+
+  	/* GET */
     app.get('/', index);
     app.get('/index', index);
     app.get('/signup', signup);
