@@ -9,6 +9,3 @@ package-lock.json
 .idea/term-project.iml
 .idea/vcs.xml
 .idea/workspace.xml
-npm-debug.log
-.DS_Store
-/*.env
